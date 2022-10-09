@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>ScoreBoard Settings</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="scoreboard,score,counter" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script>
+    function addEvents() {
+      const { invoke } = window.__TAURI__.tauri;
+      const settingsButton = document.querySelector("#saveSettings");
+      const timerArea = document.querySelector("#wrapTime");
+      settingsButton.addEventListener('pointerup', async () => {
+        var settingsString = settingsToUrl();
+        await invoke("settings", { name: settingsString });
+      });
+      timerArea.addEventListener('pointerup', async () => {
+        await invoke("update", { data: { clock: true, host_goals: 0, visitor_goals: 0 } });
+      });
+    }
+  </script>
+</head>
+
+<body class="defaultTheme" onload="addEvents();">
+  <div id="variables">
+    sport=football&ms=0&show=20227&stt=100100550111031&panelord=14325&colors=69716B-ffffff-ffffff-000000&lbl=---PERIOD---
+  </div>
+  <div id="showHidePlayerBoards" class="spNOPE">
+  </div>
+  <input id="hiddenInput" type="text" value="x"><span id="hiddenSpan">&nbsp;</span>
+  <div id="errorLogShadow">
+    <div id="errorLog">
+      &nbsp;
+    </div>
+  </div>
+  <div id="customeStyles">
+  </div>
+</body>
+
+</html>

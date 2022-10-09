@@ -1,0 +1,3084 @@
+@font-face {
+  font-family: "D7MB";
+  src: url("files/font/DSEG7Classic-Bold.woff") format('woff')
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block
+}
+
+body {
+  line-height: 1;
+  font-family: Arial, Helvetica, sans-serif
+}
+
+ol,
+ul {
+  list-style: none
+}
+
+a.moving {
+  display: block;
+  background: #69716b;
+  font-size: 18px;
+  line-height: 25px;
+  color: #FFF !important
+}
+
+a.moving:hover {
+  background: #000
+}
+
+blockquote,
+q {
+  quotes: none
+}
+
+strong {
+  font-weight: bold
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0
+}
+
+input[type="number"] {
+  -moz-appearance: textfield
+}
+
+#intro img {
+  max-width: 100%
+}
+
+.qc-cmp2-persistent-link {
+  padding: 2px 5px;
+  text-decoration: none;
+  color: #FFF !important;
+  font-weight: normal !important;
+  opacity: 0.4;
+  right: auto;
+  font-size: 13px;
+  background: #000;
+  left: 0;
+  bottom: 0
+}
+
+.qc-cmp2-persistent-link:hover {
+  opacity: 0.8
+}
+
+.adwrap {
+  max-width: 100%;
+  overflow: hidden;
+  text-align: center
+}
+
+.max100 {
+  width: 100px
+}
+
+.max200 {
+  width: 200px
+}
+
+.max300 {
+  width: 300px
+}
+
+.max400 {
+  width: 400px
+}
+
+.max500 {
+  width: 500px
+}
+
+a,
+a:link,
+a:hover,
+a:visited {
+  color: #FFF;
+  text-decoration: none
+}
+
+.cookieWarning {
+  font-size: 0.88em;
+  color: #555;
+  padding: 10px 0 5px
+}
+
+#variables {
+  display: none
+}
+
+body {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #69716b;
+  color: #333;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0
+}
+
+.clearboth {
+  clear: both
+}
+
+#showHidePlayerBoards {
+  overflow: hidden;
+  max-width: 100%
+}
+
+/*::selection{background:#220071;color:#FFF}
+::-moz-selection{background:#220071; color:#FFF}
+*/
+#menu em {
+  display: block;
+  height: 50px;
+  width: 80px;
+  background: url(files/menu.png) no-repeat top left transparent;
+  margin: 4px auto 10px
+}
+
+#menu div:nth-child(2) em {
+  background-position: 0 -50px
+}
+
+#menu div:nth-child(3) em {
+  background-position: 0 -100px
+}
+
+#menu div:nth-child(4) em {
+  background-position: 0 -150px
+}
+
+#menu div:nth-child(5) em {
+  background-position: 0 -200px
+}
+
+#menu div:nth-child(6) em {
+  background-position: 0 -300px
+}
+
+#menu div:nth-child(7) em {
+  background-position: 0 -350px
+}
+
+#intro .col {
+  max-width: 500px;
+  display: inline-block;
+  text-align: left;
+  vertical-align: top;
+  margin: 0 2%;
+  width: 27%
+}
+
+#intro {
+  background: #d9deda;
+  /*display:none;*/
+}
+
+#menu {
+  text-align: center;
+  padding: 10px
+}
+
+#menu span {
+  font-size: 0.8em;
+  font-weight: bold
+}
+
+#menu>div {
+  display: inline-block;
+  vertical-align: top;
+  width: 140px;
+  padding: 0px 10px 10px
+}
+
+#menu div.fadedLinks a {
+  color: #868b87
+}
+
+#menu div a {
+  display: block;
+  border-radius: 10px;
+  font-weight: bold;
+  color: #3e403e;
+  padding: 2px
+}
+
+#intro a {
+  cursor: pointer
+}
+
+#menu div a.openedLink {
+  background: rgba(255, 255, 255, 0.5)
+}
+
+#menu div a:hover {
+  background: #fff
+}
+
+#menu div.fadedLinks a:hover {
+  background: transparent
+}
+
+.designYourOwn {
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.5)
+}
+
+.designYourOwn a {
+  background: #5b8a67;
+  color: #FFF !important;
+  margin-top: 5px;
+  font-size: 0.9em;
+  text-align: center;
+  line-height: 1.2em
+}
+
+#menu div.designYourOwn a:hover {
+  background: #396544
+}
+
+#showHidePlayerBoards {
+  position: relative
+}
+
+.players {
+  min-height: 100px;
+  background: #000;
+  display: none;
+  vertical-align: top;
+  vertical-align: middle;
+  border-radius: 10px;
+  padding: 24px 5px 24px 1px
+}
+
+.player .wrapEditable {
+  box-shadow: none !important
+}
+
+.players input {
+  border: none;
+  background: transparent;
+  color: #FFF;
+  font-size: 1em;
+  font-family: arial narrow;
+  padding: 1px 4px;
+  max-width: 100px;
+  font-weight: bold
+}
+
+.players input.plnr {
+  font-size: 1.2em;
+  width: 33px;
+  text-align: right
+}
+
+.invisible {
+  opacity: 0
+}
+
+#errorLog span {
+  background: #ad2727;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0 8px;
+  color: #FFF;
+  margin: 0 3px;
+  opacity: 0.8;
+  border-radius: 10px
+}
+
+#errorLog span:hover {
+  opacity: 1
+}
+
+.playerScore {
+  width: 35px
+}
+
+.players input,
+.pfouls>div {
+  height: 36px
+}
+
+.fouls1 .pFoul1,
+.fouls2 .pFoul1,
+.fouls2 .pFoul2,
+.fouls3 .pFoul1,
+.fouls3 .pFoul2,
+.fouls3 .pFoul3,
+.fouls4 .pFoul1,
+.fouls4 .pFoul2,
+.fouls4 .pFoul3,
+.fouls4 .pFoul4,
+.fouls5 .pFoul1,
+.fouls5 .pFoul2,
+.fouls5 .pFoul3,
+.fouls5 .pFoul4,
+.fouls5 .pFoul5,
+.fouls6 .pFoul1,
+.fouls6 .pFoul2,
+.fouls6 .pFoul3,
+.fouls6 .pFoul4,
+.fouls6 .pFoul5,
+.fouls6 .pFoul6 {
+  opacity: 1;
+}
+
+.players .wrapPscore input {
+  color: #f70000;
+  background: transparent;
+  text-align: right;
+  padding: 0px;
+  border-radius: 0
+}
+
+.players .wrapPscore {
+  display: inline-block;
+  width: 50px;
+  height: 30px
+}
+
+.pfouls {
+  display: inline-block;
+  cursor: pointer;
+  vertical-align: middle
+}
+
+.pfouls>div {
+  display: inline-block;
+  vertical-align: middle
+}
+
+.pfouls>div>div {
+  display: inline-block;
+  width: 14px;
+  margin: 0 1px;
+  vertical-align: middle;
+  height: 14px;
+  background: #FFF;
+  overflow: hidden;
+  border-radius: 10px;
+  text-indent: 999px;
+  opacity: 0.2
+}
+
+.pfouls>div>div:last-child {
+  background: #f70000
+}
+
+.showTimeOut {
+  /*display:none;*/
+}
+
+.playerPenalty {
+  display: block;
+  margin: 4px 0
+}
+
+.penaltyNR {
+  display: inline-block;
+  background: transparent;
+  border: none;
+  color: #FFF;
+  font-size: 2em;
+  text-align: right;
+  width: 55px;
+  padding: 2px
+}
+
+.penaltyNR:focus {
+  outline: 1px solid #000;
+  box-shadow: -2px -2px 13px #000 inset;
+  border-radius: 4px
+}
+
+.shotClockColorSelect {
+  background: #000;
+  color: #f70000;
+  font-family: D7MB
+}
+
+.shotClockColorSelect.select {
+  box-shadow: 0px 0px 0px 2px #444
+}
+
+#settings span.select.shotClockColorSelect {
+  background: #000
+}
+
+.secondShotClockColor {
+  color: #FFF
+}
+
+.wrapPenaltyClock,
+.wrapShotClock {
+  display: inline-block;
+  background: #000;
+  border-radius: 10px;
+  cursor: pointer
+}
+
+.wrapShotClock .timeisUp {
+  box-shadow: 0px 0px 0px 10px #f70000
+}
+
+#penaltyH1Min,
+#penaltyH2Min,
+#penaltyV1Min,
+#penaltyV2Min {
+  text-align: right
+}
+
+#penaltyH1Sec,
+#penaltyH2Sec,
+#penaltyV1Sec,
+#penaltyV2Sec {
+  text-align: left
+}
+
+.off #penaltyH1Min,
+.off #penaltyH2Min,
+.off #penaltyV1Min,
+.off #penaltyV2Min,
+.off #penaltyH1Sec,
+.off #penaltyH2Sec,
+.off #penaltyV1Sec,
+.off #penaltyV2Sec,
+.wrapPenaltyClock.off span {
+  opacity: 0.3
+}
+
+.wrapPenaltyClock .wrapEditable,
+.wrapShotClock .wrapEditable {
+  display: inline-block;
+  padding: 2px
+}
+
+.wrapPenaltyClock .wrapEditable {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.wrapPenaltyClock .wrapEditable input,
+.wrapShotClock .wrapEditable input {
+  font-size: 1.5em;
+  width: 50px;
+  padding: 10px 1px
+}
+
+#wrapshotClock {
+  font-size: 1.5em
+}
+
+.wrapPenaltyClock span,
+.wrapShotClock span {
+  color: #f70000;
+  font-size: 1.5em;
+  margin: 0;
+  width: 5px;
+  display: inline-block
+}
+
+.wrapShotClock {
+  font-size: 3em;
+  color: #FFF;
+  position: relative
+}
+
+.wrapShotClock .wrapEditable input {
+  width: 270px;
+  font-size: 1.5em;
+  color: #f70000
+}
+
+.wrapHow2Use {
+  display: none
+}
+
+.label {
+  background: transparent;
+  border: none;
+  outline: none;
+  position: absolute;
+  color: #FFF;
+  font-size: 1.2em;
+  text-align: center;
+  left: 0;
+  top: -5px;
+  right: 0;
+  max-width: 100%;
+  z-index: 5
+}
+
+.wrapLabel {
+  height: 30px;
+  display: none
+}
+
+.sp .wrapLabel {
+  height: 15px
+}
+
+.sl #timeOut1,
+.sl #timeOut2 {
+  padding-top: 20px
+}
+
+.sl .possession {
+  padding-top: 60px
+}
+
+#timeOut1 .wrapLabel,
+#timeOut2 .wrapLabel {
+  padding-top: 5px
+}
+
+.showHockeyPenalty {
+  display: none
+}
+
+.showHockeyPenalty .label {
+  text-align: right
+}
+
+#shotClockPause.paused {
+  color: #f70000
+}
+
+#shotClock.size2 {
+  font-size: 2.5em;
+  width: 450px
+}
+
+#shotClock.size3 {
+  font-size: 3.5em;
+  width: 630px
+}
+
+.closeable {
+  position: relative
+}
+
+.settingsIsOpen .closeable:hover {
+  box-shadow: 0px 0px 2px 2px #fff;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.closeThisPanel,
+.moveThisPanelUp {
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  background: #FFF;
+  font-size: 24px;
+  color: #000;
+  z-index: 9;
+  width: 30px;
+  height: 30px;
+  box-shadow: 0px 0px 4px 0px #000;
+  line-height: 26px;
+  font-weight: bold;
+  border-radius: 20px;
+  top: -10px;
+  right: -10px;
+  opacity: 0.8
+}
+
+.closeThisPanel:hover,
+.moveThisPanelUp:hover {
+  opacity: 1
+}
+
+.settingsIsOpen .closeable:hover .closeThisPanel {
+  display: block
+}
+
+.centerPanel {
+  display: inline-block;
+  max-width: 1220px;
+  vertical-align: top;
+  width: 100%
+}
+
+.centerPanel li {
+  display: block;
+  position: relative;
+  padding: 10px 0
+}
+
+.settingsIsOpen li:hover {
+  box-shadow: 0px 0px 2px 2px #fff;
+  background: rgba(0, 0, 0, 0.2)
+}
+
+#middleSection>div.moveThisPanelUp {
+  display: none;
+  margin: 0;
+  position: absolute
+}
+
+.settingsIsOpen li#middleSection:hover>div.moveThisPanelUp,
+.settingsIsOpen li:hover .moveThisPanelUp {
+  display: block
+}
+
+.moveThisPanelUp {
+  right: auto;
+  top: 40%;
+  left: 5px;
+  vertical-align: top;
+  display: none;
+  margin: 0;
+  -moz-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg)
+}
+
+.centerPanel li:nth-child(1) .moveThisPanelUp {
+  display: none !important
+}
+
+#showShotClock {
+  display: none
+}
+
+.wrapBoardTitle {
+  display: none
+}
+
+.revealWhenHovered {
+  position: absolute;
+  right: -22px;
+  width: 50%;
+  bottom: -30px;
+  height: 40px;
+  z-index: 5
+}
+
+.revealWhenHovered#wrapShotClockButtons {
+  width: 100%
+}
+
+.revealWhenHovered>div {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 30px;
+  line-height: 30px;
+  letter-spacing: 0;
+  font-size: 30px
+}
+
+.revealWhenHovered>div a {
+  text-decoration: none;
+  background: #FFF;
+  opacity: 0.8;
+  color: #000;
+  min-width: 27px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 6px;
+  padding: 3px;
+  margin: 0 6px 0 0;
+  line-height: 20px;
+  letter-spacing: 0
+}
+
+.revealWhenHovered>div a:hover {
+  opacity: 1
+}
+
+.revealWhenHovered>div svg {
+  width: 20px;
+  height: 20px
+}
+
+.teams5 .wrapQuickScoreSett,
+.teams6 .wrapQuickScoreSett,
+.teams7 .wrapQuickScoreSett,
+.teams8 .wrapQuickScoreSett,
+.teams9 .wrapQuickScoreSett,
+.teams10 .wrapQuickScoreSett {
+  display: none !important;
+  /*ha sok team van akkor nem mutatja a quick settingeket*/
+}
+
+.quickScoreSett {
+  bottom: 0;
+  right: 0;
+  /* opacity:0;*/
+  position: absolute;
+  z-index: 5
+}
+
+.wrapPscore {
+  display: inline-block
+}
+
+.sp .wrapScoreInput {
+  width: 90%
+}
+
+.sp .revealWhenHovered>div a {
+  font-size: 14px;
+  border-radius: 4px;
+  line-height: 16px;
+  min-width: 19px
+}
+
+.sp .timerSeparator {
+  margin-top: 35px
+}
+
+.sp .revealWhenHovered {
+  width: 57%
+}
+
+.sp .penaltyNR {
+  font-size: 1.3em;
+  width: 19px
+}
+
+.sp #middleSection>div>div {
+  margin: 0 3px
+}
+
+.sp #fouls1,
+.sp #fouls2 {
+  width: 70px;
+  font-size: 3em
+}
+
+.sp #scoreBoard {
+  padding-top: 100px
+}
+
+#showHidePlayerBoards .players {
+  display: none !important
+}
+
+#showHidePlayerBoards.sp .players {
+  display: inline-block !important
+}
+
+.sp #wrapWrapTime {
+  font-size: 0.8em
+}
+
+.sp .centerPanel {
+  font-size: 0.6em;
+  max-width: 50%;
+  vertical-align: middle
+}
+
+.sp .timeOutDot {
+  width: 25px;
+  height: 25px
+}
+
+.sp #wrapTime.timerAuto .timer,
+.sp #wrapTime.timerMS .timer {
+  max-width: 200px
+}
+
+.sp #wrapTime.timerAll .timer {
+  max-width: 130px
+}
+
+.sp #middleSection>div {
+  margin: 0 5px
+}
+
+.sp .wrapFouls {
+  padding-top: 12px
+}
+
+.sp #period {
+  max-width: 80px
+}
+
+.sp .wrapPenaltyClock .wrapEditable input {
+  width: 22px;
+  padding: 13px 0;
+  font-size: 1.1em
+}
+
+.sp #timeOut1,
+.sp #timeOut2 {
+  padding-top: 35px
+}
+
+.sp .possession {
+  padding-top: 30px
+}
+
+.sp .sl .possession {
+  padding-top: 45px
+}
+
+.font1 .digital,
+#fontFamily1,
+.font1 .phnr,
+.font1 .pvnr {
+  font-weight: bold;
+  font-family: D7MB
+}
+
+.font2 .digital,
+#fontFamily2,
+.font2 .phnr,
+.font2 .pvnr {
+  font-weight: bold;
+  font-family: Verdana, Geneva, sans-serif;
+  height: 1em
+}
+
+.font3 .digital,
+#fontFamily3,
+.font3 .phnr,
+.font3 .pvnr {
+  font-family: "Lucida Console", Monaco, monospace;
+  height: 0.9em;
+  padding-top: 0.2em
+}
+
+.font4 .digital,
+#fontFamily4,
+.font4 .phnr,
+.font4 .pvnr {
+  font-weight: bold;
+  font-family: "Courier New", Courier, monospace;
+  height: 0.8em;
+  padding-top: 0.1em
+}
+
+.font5 .digital,
+#fontFamily5,
+.font5 .phnr,
+.font5 .pvnr {
+  font-weight: bold;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  height: 0.9em;
+  padding-top: 0.1em
+}
+
+#errorLogShadow {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(63, 97, 150, 0.4);
+  display: none;
+  cursor: pointer;
+  z-index: 11
+}
+
+#errorLog a {
+  margin: 30px;
+  display: block;
+  font-size: 14px;
+  color: #001dff;
+  max-width: 100%;
+  line-height: 19px;
+  overflow: hidden
+}
+
+#errorLog a:hover {
+  text-decoration: underline
+}
+
+#errorLog {
+  position: fixed;
+  top: 100px;
+  right: 100px;
+  line-height: 25px;
+  font-size: 18px;
+  padding: 20px 10px;
+  background: #FFF;
+  border: 3px solid #000000;
+  left: 100px;
+  text-align: center;
+  font-family: arial;
+  font-weight: bold;
+  border-radius: 10px;
+  letter-spacing: 1px;
+  box-shadow: 0 0 150px #000
+}
+
+input {
+  font-family: "Arial Black", Gadget, sans-serif
+}
+
+#scoreBoard {
+  font-family: "Arial Black", Gadget, sans-serif;
+  position: absolute;
+  font-size: 19px;
+  margin: auto;
+  left: 0;
+  right: 0;
+  overflow-x: auto;
+  top: 0;
+  bottom: 0
+}
+
+a#logo {
+  position: fixed;
+  top: 15px;
+  cursor: pointer;
+  left: 15px;
+  line-height: 20px;
+  font-size: 25px;
+  text-decoration: none;
+  font-family: D7MB;
+  color: #FFF;
+  outline: none;
+  letter-spacing: 2px;
+  text-align: center;
+  z-index: 11
+}
+
+a#logo.opened,
+#logo.opened strong {
+  color: #000 !important
+}
+
+#logo.opened span {
+  color: #f70000 !important;
+  background: #000 !important
+}
+
+#logo span {
+  color: #f70000;
+  background: #000;
+  display: inline-block;
+  padding: 0 3px 2px;
+  font-size: 0.7em;
+  line-height: 1.3em;
+  margin: 6px 0 0
+}
+
+#logo em {
+  letter-spacing: -2px
+}
+
+#logo strong {
+  font-size: 0.7em;
+  position: relative;
+  top: -5px;
+  color: #000;
+  left: -3px
+}
+
+#logo strong em {
+  display: inline-block;
+  -moz-transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  position: relative;
+  top: 6px;
+  left: 5px
+}
+
+#log {
+  position: fixed;
+  bottom: 5px;
+  left: 8px;
+  background: #FFF;
+  color: #000;
+  line-height: 20px;
+  font-size: 15px
+}
+
+#toggleMenu {
+  position: absolute;
+  top: 5px;
+  right: 8px;
+  font-size: 15px;
+  color: #FFF;
+  cursor: pointer;
+  font-size: 46px;
+  height: 36px;
+  width: 36px;
+  line-height: 36px;
+  border-radius: 20px;
+  background: #000;
+  text-align: center;
+  opacity: 0.8;
+  z-index: 10
+}
+
+#toggleMenu:hover {
+  opacity: 1
+}
+
+#panelCorner {
+  position: absolute;
+  top: 10px;
+  right: 50px;
+  font-size: 15px;
+  display: none;
+  z-index: 10
+}
+
+#panelCorner a {
+  display: inline-block;
+  background: #000;
+  color: #FFF;
+  opacity: 0.8;
+  padding: 3px 2px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 26px;
+  text-align: center;
+  font-size: 27px;
+  height: 22px;
+  line-height: 20px;
+  vertical-align: top
+}
+
+#panelCorner a#openSettings.active {
+  border-radius: 10px;
+  box-shadow: 0px -4px 5px #000;
+  z-index: 10;
+  position: relative;
+  background: #FFF
+}
+
+#panelCorner a#openSettings.active svg {
+  fill: #000
+}
+
+#panelCorner a svg {
+  width: 20px;
+  height: 20px;
+  fill: #FFF
+}
+
+#panelCorner a.active {
+  opacity: 1;
+  box-shadow: 2px 2px 3px #000
+}
+
+#panelCorner a:hover {
+  opacity: 0.9
+}
+
+input.teamName,
+#scoreBoardTitle {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #FFF;
+  display: block;
+  text-align: center;
+  font-size: 1.5em;
+  width: 100%;
+  height: 1em;
+  padding: 0 0 10px;
+  margin-bottom: 0px
+}
+
+#scoreBoardTitle {
+  font-size: 1.7em;
+  padding: 0
+}
+
+#showCaretOrNot {
+  text-align: center;
+  display: none
+}
+
+.wrapEditable {
+  position: relative;
+  background: #000;
+  border-radius: 10px
+}
+
+.inputOverlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  cursor: pointer
+}
+
+.showEditCaret .inputOverlay {
+  display: none
+}
+
+#wrapTime .wrapEditable {
+  float: left;
+  background: transparent !important
+}
+
+#hiddenInput {
+  width: 5px;
+  height: 5px;
+  background: transparent;
+  color: transparent;
+  border: none;
+  outline: none !important;
+  position: fixed;
+  top: 1px;
+  left: 1px;
+  overflow: hidden;
+  /*background:#FFF;color:#000;*/
+}
+
+#hiddenSpan {
+  position: fixed;
+  top: 2px;
+  left: 30px
+}
+
+.editable {
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: relative;
+  caret-color: #000;
+  background: transparent;
+  color: #f70000;
+  padding: 10px;
+  line-height: 1em;
+  border-radius: 10px;
+  outline: none !important;
+  cursor: pointer;
+  border: none;
+  outline: none !important;
+  overflow: hidden;
+  text-align: center;
+  max-width: 100%
+}
+
+.alwaysEditable {
+  background: #000;
+  color: #f70000;
+  outline: none !important;
+  display: block;
+  border: none;
+  text-align: right;
+  margin: 0 auto 4px;
+  width: 200px;
+  padding: 6px 10px 6px 2px;
+  font-size: 1.3em;
+  border-radius: 10px;
+  max-width: 75%
+}
+
+.teams6 .alwaysEditable {
+  max-width: 60%
+}
+
+.score {
+  font-size: 3.5em;
+  margin: 0;
+  padding: 15px 0
+}
+
+input.timer {
+  background: transparent !important;
+  max-width: 100%
+}
+
+.inlineBlock {
+  display: inline-block
+}
+
+.showEditCaret .editable {
+  caret-color: auto;
+  text-shadow: 2px 2px 0px #888;
+  cursor: text;
+  background: no-repeat;
+  background: url('data:image/svg+xml;utf8,<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="30px" height="30px" viewBox="0 0 528.899 528.899" style="enable-background:new 0 0 528.899 528.899;" xml:space="preserve"><path d="M328.883,89.125l107.59,107.589l-272.34,272.34L56.604,361.465L328.883,89.125z M518.113,63.177l-47.981-47.981 c-18.543-18.543-48.653-18.543-67.259,0l-45.961,45.961l107.59,107.59l53.611-53.611 C532.495,100.753,532.495,77.559,518.113,63.177z M0.3,512.69c-1.958,8.812,5.998,16.708,14.811,14.565l119.891-29.069 L27.473,390.597L0.3,512.69z" fill="#777777"></path></svg>') 10px 10px no-repeat
+}
+
+.roundsAndAddIcon {
+  display: none;
+  position: relative;
+}
+
+.roundWrapper {
+  font-size: 0.4em
+}
+
+.addNewRound {
+  cursor: pointer;
+  bottom: 0;
+  z-index: 12;
+  position: absolute;
+  right: 0;
+  height: 26px;
+  width: 26px;
+  text-align: center;
+  line-height: 26px;
+  font-size: 23px;
+  border-radius: 20px
+}
+
+.addNewRound:hover {
+  background: rgba(0, 0, 0, 0.4)
+}
+
+#wrapScores {
+  text-align: center
+}
+
+.numberLengthAdjustWidth {
+  font-size: 1em
+}
+
+.clearboth {
+  clear: both;
+  display: block !important
+}
+
+.team {
+  width: 48%;
+  text-align: center;
+  font-size: 2.5em;
+  color: #FFF;
+  vertical-align: top;
+  display: inline-block
+}
+
+.teams10 .ranking span {
+  font-size: 0.5em;
+}
+
+.teams9 .ranking span {
+  font-size: 0.5em;
+}
+
+.teams8 .ranking span {
+  font-size: 0.5em;
+}
+
+.teams7 .ranking span {
+  font-size: 0.5em;
+}
+
+.teams6 .ranking span {
+  font-size: 0.7em;
+}
+
+.teams5 .ranking span {
+  font-size: 0.7em;
+}
+
+.teams4 .ranking span {
+  font-size: 0.8em;
+}
+
+.teams3 .ranking span {
+  font-size: 0.9em;
+}
+
+.teams1 .team {
+  width: 98%
+}
+
+.teams2 .team {
+  width: 48%
+}
+
+.teams3 .team {
+  width: 33%;
+  margin-bottom: 30px
+}
+
+.teams4 .team {
+  width: 25%;
+  margin-bottom: 20px
+}
+
+.teams5 .team {
+  width: 33%;
+  margin-bottom: 20px
+}
+
+.teams6 .team {
+  width: 33%;
+  margin-bottom: 20px
+}
+
+.teams7 .team {
+  width: 31%;
+  margin-bottom: 20px
+}
+
+.teams8 .team {
+  width: 25%;
+  margin-bottom: 20px
+}
+
+.teams9 .team {
+  width: 30%;
+  margin-bottom: 20px
+}
+
+.teams10 .team {
+  width: 25%;
+  margin-bottom: 20px;
+}
+
+.teams1 .score {
+  font-size: 4.5em
+}
+
+.teams2 .score {
+  font-size: 4.5em
+}
+
+.teams3 .score {
+  font-size: 3em
+}
+
+.teams4 .score {
+  font-size: 2.5em
+}
+
+.teams5 .score {
+  font-size: 1.8em;
+  padding: 10px 0
+}
+
+.teams6 .score {
+  font-size: 1.8em;
+  padding: 10px 0
+}
+
+.teams7 .score {
+  font-size: 1.2em;
+  padding: 10px 0
+}
+
+.teams8 .score {
+  font-size: 1.8em;
+  padding: 10px 0
+}
+
+.teams9 .score {
+  font-size: 1.9em;
+  padding: 10px 0
+}
+
+.teams10 .score {
+  font-size: 1.8em;
+  padding: 10px 0;
+}
+
+.teams7 .alwaysEditable,
+.teams8 .alwaysEditable,
+.teams9 .alwaysEditable,
+.teams10 .alwaysEditable {
+  margin: 0 auto 2px;
+  width: 200px;
+  padding: 4px 10px 4px 2px;
+  font-size: 0.9em;
+  border-radius: 5px
+}
+
+.teams1 input.teamName {
+  font-size: 1.5em;
+}
+
+.teams2 input.teamName {
+  font-size: 1.3em;
+}
+
+.teams3 input.teamName {
+  font-size: 1.1em;
+}
+
+.teams4 input.teamName {
+  font-size: 1em;
+}
+
+.teams5 input.teamName {
+  font-size: 0.6em;
+  padding-bottom: 5px;
+}
+
+.teams6 input.teamName {
+  font-size: 0.6em;
+  padding-bottom: 5px;
+}
+
+.teams7 input.teamName {
+  font-size: 0.6em;
+  padding-bottom: 5px;
+}
+
+.teams8 input.teamName {
+  font-size: 0.6em;
+  padding-bottom: 5px;
+}
+
+.teams9 input.teamName {
+  font-size: 0.6em;
+  padding-bottom: 5px;
+}
+
+.teams10 input.teamName {
+  font-size: 0.4em;
+  padding-bottom: 5px;
+}
+
+.teams1 #team2,
+.teams1 #team3,
+.teams1 #team4,
+.teams1 #team5,
+.teams1 #team6,
+.teams1 #team7,
+.teams1 #team8,
+.teams1 #team9,
+.teams1 #team10 {
+  display: none
+}
+
+.teams2 #team3,
+.teams2 #team4,
+.teams2 #team5,
+.teams2 #team6,
+.teams2 #team7,
+.teams2 #team8,
+.teams2 #team9,
+.teams2 #team10 {
+  display: none
+}
+
+.teams3 #team4,
+.teams3 #team5,
+.teams3 #team6,
+.teams3 #team7,
+.teams3 #team8,
+.teams3 #team9,
+.teams3 #team10 {
+  display: none
+}
+
+.teams4 #team5,
+.teams4 #team6,
+.teams4 #team7,
+.teams4 #team8,
+.teams4 #team9,
+.teams4 #team10 {
+  display: none
+}
+
+.teams5 #team6,
+.teams5 #team7,
+.teams5 #team8,
+.teams5 #team9,
+.teams5 #team10 {
+  display: none
+}
+
+.teams6 #team7,
+.teams6 #team8,
+.teams6 #team9,
+.teams6 #team10 {
+  display: none
+}
+
+.teams7 #team8,
+.teams7 #team9,
+.teams7 #team10 {
+  display: none
+}
+
+.teams8 #team9,
+.teams8 #team10 {
+  display: none
+}
+
+.teams9 #team10 {
+  display: none
+}
+
+.teams2 #addNewRound1,
+.teams3 #addNewRound1,
+.teams4 #addNewRound1,
+.teams5 #addNewRound1,
+.teams6 #addNewRound1,
+.teams7 #addNewRound1,
+.teams8 #addNewRound1,
+.teams9 #addNewRound1,
+.teams10 #addNewRound1,
+.teams3 #addNewRound2,
+.teams4 #addNewRound2,
+.teams5 #addNewRound2,
+.teams6 #addNewRound2,
+.teams7 #addNewRound2,
+.teams8 #addNewRound2,
+.teams9 #addNewRound2,
+.teams10 #addNewRound2,
+.teams4 #addNewRound3,
+.teams5 #addNewRound3,
+.teams6 #addNewRound3,
+.teams7 #addNewRound3,
+.teams8 #addNewRound3,
+.teams9 #addNewRound3,
+.teams10 #addNewRound3,
+.teams5 #addNewRound4,
+.teams6 #addNewRound4,
+.teams7 #addNewRound4,
+.teams8 #addNewRound4,
+.teams9 #addNewRound4,
+.teams10 #addNewRound4,
+.teams6 #addNewRound5,
+.teams7 #addNewRound5,
+.teams8 #addNewRound5,
+.teams9 #addNewRound5,
+.teams10 #addNewRound5,
+.teams7 #addNewRound6,
+.teams8 #addNewRound6,
+.teams9 #addNewRound6,
+.teams10 #addNewRound6,
+.teams8 #addNewRound7,
+.teams9 #addNewRound7,
+.teams10 #addNewRound7,
+.teams9 #addNewRound8,
+.teams10 #addNewRound8,
+.teams10 #addNewRound9 {
+  display: none;
+}
+
+.timeOutDot {
+  display: inline-block;
+  background: #FFF;
+  width: 45px;
+  height: 45px;
+  overflow: hidden;
+  border-radius: 100px;
+  text-indent: 999px;
+  cursor: pointer
+}
+
+.glow1 .timeOutDot1,
+.glow2 .timeOutDot1,
+.glow2 .timeOutDot2,
+.glow3 .timeOutDot1,
+.glow3 .timeOutDot2,
+.glow3 .timeOutDot3 {
+  opacity: 1
+}
+
+#timeOut1,
+#timeOut2 {
+  cursor: pointer;
+  padding-top: 45px
+}
+
+#middleSection {
+  text-align: center;
+  letter-spacing: 0px
+}
+
+#middleSection>div>div {
+  float: left;
+  margin: 0 10px;
+  position: relative
+}
+
+#showOrHidePeriod.hidePeriod {
+  display: none
+}
+
+#wrapTime {
+  background: #000;
+  width: 66%;
+  cursor: pointer;
+  font-size: 3em;
+  border-radius: 10px;
+  margin: auto;
+  text-align: center;
+  position: relative
+}
+
+#wrapTime .wrapScoreInput {
+  width: auto;
+  vertical-align: middle
+}
+
+.wrapScoreInput {
+  position: relative;
+  width: 80%;
+  display: inline-block;
+  vertical-align: middle
+}
+
+.ranking {
+  display: inline-block;
+  font-size: 1em;
+  padding-right: 5px;
+  vertical-align: middle
+}
+
+.mode3 .ranking {
+  font-size: 3em
+}
+
+.timerSeparator {
+  color: #f70000;
+  float: left;
+  font-size: 2em;
+  margin-top: 30px;
+  vertical-align: middle;
+  opacity: 0.6
+}
+
+.font2 .timerSeparator {
+  margin-top: 20px
+}
+
+.font3 .timerSeparator {
+  margin-top: 20px
+}
+
+.font4 .timerSeparator {
+  margin-top: 20px
+}
+
+.font5 .timerSeparator {
+  margin-top: 20px
+}
+
+.timerRunning .timerSeparator {
+  opacity: 1
+}
+
+#fontSelector {
+  padding-top: 65px;
+  position: relative;
+  z-index: 5
+}
+
+#hundredth {
+  text-align: left;
+}
+
+#seconds {
+  text-align: center;
+}
+
+#minutes {
+  text-align: right;
+}
+
+.timerMS #seconds {
+  text-align: left;
+}
+
+#wrapTime.timerAuto .itIsUnderOneMin .minutesSection {
+  display: none
+}
+
+#wrapTime.timerAuto .itIsAboveOneMin .hundredthSection {
+  display: none
+}
+
+#wrapTime.timerAuto .itIsUnderOneMin #seconds {
+  text-align: right;
+}
+
+#wrapTime.timerAuto .itIsAboveOneMin #seconds {
+  text-align: left;
+}
+
+#wrapTime.timerHide {
+  display: none
+}
+
+#wrapTime.timerMS .hundredthSection {
+  display: none
+}
+
+#wrapTime.timerMS .timer {
+  font-size: 2.4em;
+  max-width: 400px
+}
+
+#wrapTime.timerAuto .timer {
+  font-size: 2.4em;
+  max-width: 400px
+}
+
+#wrapTime.timerAll .timer {
+  font-size: 1.6em;
+  max-width: 250px
+}
+
+#wrapTime.timerMS .timer.smallerMinutesFont {
+  font-size: 1.7em;
+}
+
+/*minutes > 99 - 3 digit*/
+#wrapTime.timerAuto .timer.smallerMinutesFont {
+  font-size: 1.7em;
+}
+
+#wrapTime.timerAll .timer.smallerMinutesFont {
+  font-size: 1.2em;
+}
+
+#wrapTime.timerAll .timerSeparator {
+  font-size: 1.3em
+}
+
+#wrapOvertime {
+  color: #FFF;
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  display: none
+}
+
+#overtime {
+  color: #fff;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 2em
+}
+
+#overtime {
+  color: #FFF
+}
+
+#period,
+#fouls1,
+#fouls2 {
+  font-size: 5em
+}
+
+#fouls1,
+#fouls2 {
+  width: 166px;
+  padding: 10px 2px;
+  text-align: center
+}
+
+#period {
+  max-width: 100px
+}
+
+.brightTheme .wrapEditable,
+.brightTheme #wrapTime,
+.brightTheme .alwaysEditable {
+  box-shadow: 0px 0px 0px 4px #7d7d7d
+}
+
+.brightTheme #wrapTime .wrapEditable {
+  box-shadow: none
+}
+
+.brightTheme .showEditCaret .editable {
+  text-shadow: 2px 2px 0px #808080
+}
+
+.darkTheme .wrapEditable,
+.darkTheme #wrapTime,
+.darkTheme .alwaysEditable,
+.darkTheme .wrapPenaltyClock,
+.darkTheme .wrapShotClock {
+  box-shadow: 0px 0px 0px 4px #999
+}
+
+.darkTheme #wrapTime .wrapEditable {
+  box-shadow: none
+}
+
+.teamImage {
+  font-size: 0.4em;
+  text-align: center;
+  font-family: Arial
+}
+
+.teamImage img {
+  max-width: 100%
+}
+
+#teamImage3,
+#teamImage4,
+#teamImage5,
+#teamImage6,
+#teamImage7,
+#teamImage8,
+#teamImage9,
+#teamImage10 {
+  display: none
+}
+
+#settings svg {
+  height: 18px;
+  width: 18px
+}
+
+#settings {
+  z-index: 12;
+  padding: 15px;
+  background: #FFF;
+  position: absolute;
+  text-align: center;
+  display: none;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  border-radius: 20px 20px 0 0;
+  font-family: arial;
+  font-weight: normal;
+  font-size: 14px;
+  box-shadow: 0px 1px 15px #000
+}
+
+#settings.right {
+  left: auto;
+  bottom: auto;
+  border-radius: 20px 0px 0px 20px;
+  top: 37px
+}
+
+#settings.right>div {
+  display: block
+}
+
+#settings #settingsRight {
+  -moz-transform: rotate(-60deg);
+  -webkit-transform: rotate(-60deg);
+  -o-transform: rotate(-60deg);
+  -ms-transform: rotate(-60deg);
+  transform: rotate(-60deg)
+}
+
+#settings.right #settingsRight {
+  -moz-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg)
+}
+
+#settings input[type="color"],
+#settings .jscolor {
+  padding: 0;
+  width: 35px;
+  text-indent: 100px;
+  border: 1px solid #777;
+  border-radius: 3px
+}
+
+textarea#customCSS {
+  max-width: 80%;
+  font-size: 0.8em;
+  width: 72%;
+  min-height: 15px;
+  padding-top: 3px
+}
+
+#settings input,
+textarea {
+  background: #FFF;
+  outline: none !important;
+  max-width: 85px;
+  color: #444;
+  border-radius: 5px;
+  vertical-align: middle;
+  border: 1px solid #444;
+  font-family: Arial;
+  padding: 0px 5px
+}
+
+#settings div#closeSettings,
+#settings div#settingsRight,
+#settings div#saveSettings,
+#closeWelcome {
+  position: absolute;
+  top: -35px;
+  right: 35px;
+  padding: 0;
+  background: #FFF;
+  font-weight: bold;
+  font-size: 40px;
+  border: 2px solid #444;
+  border-radius: 50px;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  line-height: 40px;
+  color: #444;
+  cursor: pointer
+}
+
+#menu div#lastMenuItem a {
+  display: inline-block
+}
+
+#closeWelcome {
+  top: 8px;
+  right: 8px;
+  cursor: pointer;
+  z-index: 99;
+  width: 40px !important;
+  text-align: center !important;
+  position: fixed;
+  padding: 0 !important;
+  background: linear-gradient(90deg, #02cc01, #FFFFFF);
+  background-size: 600% 600%;
+  -webkit-animation: buttonBackAnimation 5s ease infinite;
+  -moz-animation: buttonBackAnimation 5s ease infinite;
+  animation: buttonBackAnimation 5s ease infinite
+}
+
+@-webkit-keyframes buttonBackAnimation {
+  0% {
+    background-position: 0% 50%
+  }
+
+  50% {
+    background-position: 100% 50%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@-moz-keyframes buttonBackAnimation {
+  0% {
+    background-position: 0% 50%
+  }
+
+  50% {
+    background-position: 100% 50%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@keyframes buttonBackAnimation {
+  0% {
+    background-position: 0% 50%
+  }
+
+  50% {
+    background-position: 100% 50%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+.dividerLine {
+  background: #69716b;
+  width: 100%;
+  height: 3px;
+  margin-bottom: 20px
+}
+
+#settings div#settingsRight {
+  right: 100px;
+  line-height: 34px
+}
+
+#settings.right div#settingsRight,
+#settings.right div#closeSettings {
+  top: auto;
+  bottom: -30px
+}
+
+#settings div#saveSettings {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  opacity: 0.7
+}
+
+#settings div#saveSettings:hover {}
+
+#saveSettings svg {
+  width: 30px;
+  height: 30px
+}
+
+#settings div#closeSettings:hover,
+#settings div#settingsRight:hover,
+#closeWelcome:hover {
+  background: #d9deda
+}
+
+#settings>div {
+  padding: 5px 2px;
+  display: inline-block;
+  width: 390px;
+  text-align: left
+}
+
+.possession {
+  font-size: 3em;
+  cursor: pointer;
+  color: #FFF;
+  padding-top: 40px
+}
+
+.possession,
+.timeOutDot {
+  opacity: 0.2
+}
+
+.possession.active {
+  opacity: 1
+}
+
+#settings>div:hover {}
+
+#settings strong {
+  font-size: 14px;
+  display: inline-block;
+  min-width: 50px;
+  padding-right: 7px;
+  text-align: right
+}
+
+#soundToggler {
+  cursor: pointer
+}
+
+#settings #soundToggler span {
+  color: #F00;
+  box-shadow: none
+}
+
+#settings strong svg {
+  vertical-align: middle
+}
+
+#settings span,
+#settings em,
+#settings i {
+  display: inline-block;
+  cursor: pointer;
+  padding: 3px 2px;
+  border-radius: 4px;
+  font-weight: bold;
+  vertical-align: middle;
+  margin: 2px 0px 2px 0;
+  font-size: 12px;
+  min-width: 14px;
+  text-align: center
+}
+
+#settings span:hover,
+#settings em:hover,
+#settings i:hover {}
+
+#settings i {
+  background: #d3e8ff
+}
+
+#settings i.hidden {
+  background: #FFF
+}
+
+#settings i.hidden:hover {
+  opacity: 1
+}
+
+#settings span:hover,
+#settings em:hover {
+  border-color: #000
+}
+
+#settings span:active,
+#settings em:active,
+#settings span.select {
+  border-color: #000;
+  background: #d3e8ff
+}
+
+#settings em svg {
+  height: 16px;
+  width: 16px
+}
+
+#periodDuration,
+#shotClockDuration {
+  width: 20px;
+  font-weight: bold
+}
+
+input[type="color"] {
+  width: 30px
+}
+
+input[type="range"] {
+  background: url(files/sprite.png) top center no-repeat !important;
+  margin: auto;
+  -webkit-appearance: none;
+  position: relative;
+  overflow: hidden;
+  height: 20px;
+  width: 80px;
+  cursor: pointer;
+  border-radius: 0;
+  border: 2px solid #555;
+  vertical-align: middle;
+  border-radius: 8px;
+  outline: none !important
+}
+
+input#zoomSlider {
+  background-position: 70px 3px !important;
+}
+
+input#fontSlider {
+  background-position: 70px -27px !important;
+}
+
+input#pushDown {
+  background-position: 70px -57px !important;
+}
+
+::-webkit-slider-runnable-track {
+  /*background:url(files/sprite.png) top left no-repeat #FFF;*/
+  /* right side*/
+}
+
+::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  /* 1 */
+  height: 20px;
+  background: #555;
+  /* fogantyu */
+  box-shadow: -100vw 0 0 100vw #d3e8ff;
+  border: 2px solid #555;
+  /* 1 */
+}
+
+::-moz-range-track {
+  height: 40px;
+  background: #FFF
+}
+
+::-moz-range-thumb {
+  background: #fff;
+  height: 40px;
+  width: 20px;
+  border: 3px solid #999;
+  border-radius: 0 !important;
+  box-shadow: -100vw 0 0 100vw #d3e8ff;
+  box-sizing: border-box
+}
+
+::-ms-fill-lower {
+  background: #d3e8ff
+}
+
+::-ms-thumb {
+  background: #fff;
+  border: 2px solid #999;
+  height: 40px;
+  width: 20px;
+  box-sizing: border-box
+}
+
+::-ms-ticks-after {
+  display: none;
+}
+
+::-ms-ticks-before {
+  display: none;
+}
+
+::-ms-track {
+  background: #FFF;
+  color: transparent;
+  height: 40px;
+  border: none
+}
+
+::-ms-tooltip {
+  display: none
+}
+
+.bigButton {
+  text-decoration: none !important;
+  font-size: 1em;
+  background: #5b8a67;
+  color: #FFF !important;
+  display: inline-block;
+  padding: 5px 12px;
+  cursor: pointer;
+  margin: 5px 2px;
+  border-radius: 20px;
+  font-weight: bold
+}
+
+.bigButton:hover {
+  background: #396544
+}
+
+.bigButton.toggleIntro {
+  background: #d63737
+}
+
+u {
+  position: absolute;
+  z-index: 10;
+  top: 300px;
+  left: 0;
+  right: 0;
+  height: 0;
+  overflow: visible
+}
+
+#article {
+  padding: 20px 30px 30px;
+  text-align: center;
+  border-top: 3px solid #69716b
+}
+
+#article em {
+  font-style: italic
+}
+
+h1,
+h2,
+h3 {
+  font-size: 1.8em;
+  margin: 0 0 20px;
+  font-weight: bold
+}
+
+h2 {
+  font-size: 1.5em;
+  margin: 0 0 10px
+}
+
+.aligncenter {
+  text-align: center
+}
+
+p {
+  margin-bottom: 15px;
+  line-height: 1.3em
+}
+
+#article p a {
+  color: #396544;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: underline
+}
+
+#article p a:hover {
+  color: #477553
+}
+
+#article img {
+  vertical-align: middle
+}
+
+img.centered {
+  display: block;
+  margin: auto;
+  max-width: 100%
+}
+
+#article ul {
+  list-style: disc;
+  padding: 0 0 10px;
+  margin: 0 0 0 22px
+}
+
+#article li {
+  margin-bottom: 7px
+}
+
+span.inline {
+  display: block
+}
+
+.wrapColorPicker {
+  display: inline-block
+}
+
+div.colorPicker-picker {
+  height: 16px;
+  width: 30px;
+  padding: 0 !important;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  line-height: 16px;
+  font-size: 0.75em;
+  font-weight: bold;
+  text-align: center
+}
+
+div.colorPicker-palette {
+  width: 110px;
+  position: absolute;
+  border: 1px solid #598FEF;
+  background-color: #EFEFEF;
+  padding: 2px;
+  z-index: 9999
+}
+
+div.colorPicker_hexWrap {
+  width: 100%;
+  text-align: center;
+}
+
+div.colorPicker_hexWrap label {
+  display: none
+}
+
+div.colorPicker_hexWrap input {
+  margin: 5px auto 2px;
+  padding: 0;
+  font-size: 14px;
+  border: 1px solid #7d7c7c;
+  max-width: 80%;
+  text-align: center;
+  text-transform: uppercase
+}
+
+div.colorPicker-swatch {
+  height: 12px;
+  width: 12px;
+  border: 1px solid #000;
+  margin: 2px;
+  float: left;
+  cursor: pointer;
+  line-height: 12px
+}
+
+#footnote {
+  display: none
+}
+
+.tooltipScoreClick span {
+  display: inline-block;
+  background: #eee;
+  border: 1px solid #aaa;
+  padding: 2px 4px;
+  box-shadow: 1px 3px 3px 2px #888;
+  border-radius: 4px
+}
+
+.tooltipScoreClick {
+  position: absolute;
+  background: #FFF;
+  color: #444;
+  top: -70px;
+  right: 20px;
+  font-size: 30px;
+  border-radius: 40px;
+  padding: 10px 30px
+}
+
+.tooltipScoreClick div {
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  position: absolute;
+  border-radius: 1px 0px 40px 0px;
+  bottom: -26px;
+  left: 35px
+}
+
+@media screen and (max-width:1450px) {
+  #menu>div.fadedLinks {
+    display: none
+  }
+
+  #intro .col {
+    margin: 0 1%;
+    width: 29%
+  }
+}
+
+@media screen and (max-width:1580px) {
+  div#lastMenuItem {
+    display: block;
+    width: auto !important;
+    padding: 10px 10px 0;
+    text-align: center !important
+  }
+}
+
+@media screen and (max-width:1250px) {
+  #intro .col {
+    display: block;
+    margin: auto;
+    width: 100%;
+    max-width: 800px
+  }
+
+  span.inline {
+    display: inline-block;
+    width: 300px;
+    max-width: 100%
+  }
+
+  #menu {
+    padding: 10px 10px 10px 140px
+  }
+
+  .dividerLine {
+    background: transparent
+  }
+}
+
+@media screen and (max-width:1150px) {
+  #menu>div.designYourOwn {
+    display: none
+  }
+}
+
+@media screen and (max-width:1000px) {
+  #menu {
+    max-width: 500px
+  }
+}
+
+@media screen and (max-width:670px) {
+  #menu em {
+    display: none
+  }
+
+  #menu>div {
+    width: 110px;
+    text-align: left
+  }
+
+  #menu>div.designYourOwn {
+    display: inline-block
+  }
+}
+
+@media screen and (max-width:550px) {
+  #errorLog {
+    top: 50px;
+    right: 50px;
+    line-height: 20px;
+    font-size: 14px;
+    background: #FFF;
+    left: 50px
+  }
+
+  a#logo {
+    top: 8px;
+    left: 8px;
+    line-height: 15px;
+    font-size: 20px
+  }
+
+  #article {
+    padding: 20px 10px 30px
+  }
+
+  #menu {
+    padding: 110px 10px 10px 10px
+  }
+
+  .designYourOwn span {
+    display: none
+  }
+
+  #menu>div.designYourOwn {
+    background: transparent
+  }
+
+  #settings.right {
+    border-radius: 5px 0px 0px 5px
+  }
+
+  #settings {
+    padding: 3px 3px 15px
+  }
+
+  #settings.right>div {
+    display: block;
+    clear: both;
+    border-bottom: 2px solid #bbb;
+    width: 280px
+  }
+
+  #closeSettings {
+    display: none !important;
+  }
+
+  #settings div#settingsRight {
+    right: auto;
+    bottom: 5px !important;
+    left: 5px;
+    top: auto
+  }
+
+  #settings.right div#settingsRight {
+    left: -35px;
+    top: -2px !important
+  }
+
+  #settings div#saveSettings {
+    top: 5px;
+    right: 5px
+  }
+}
+
+@media screen and (max-height:550px) {
+  a#logo {
+    top: 7px;
+    left: 7px;
+    line-height: 11px;
+    font-size: 14px
+  }
+
+  #logo strong {
+    display: none
+  }
+}
+
+@media screen and (max-width:1200px),
+screen and (max-height:800px) {
+  #scoreBoard {
+    font-size: 12px
+  }
+
+  .players input,
+  .pfouls>div {
+    height: 16px
+  }
+
+  .sp #fouls1,
+  .sp #fouls2 {
+    width: 30px
+  }
+
+  .sp .wrapPenaltyClock .wrapEditable input {
+    width: 14px;
+    padding: 10px 0;
+    font-size: 1.2em
+  }
+
+  .sp #period {
+    max-width: 30px
+  }
+
+  .sp #wrapTime.timerAll .timer {
+    max-width: 75px;
+    padding: 3px 0px
+  }
+
+  .sp #timeOut1,
+  .sp #timeOut2 {
+    padding-top: 24px
+  }
+
+  .pfouls>div>div {
+    width: 10px;
+    height: 10px
+  }
+
+  .sp .timeOutDot {
+    width: 15px;
+    height: 15px
+  }
+
+  .sp #period {
+    max-width: 40px;
+    padding: 5px
+  }
+
+  .playerScore {
+    width: 25px
+  }
+
+  .sp .centerPanel {
+    max-width: 43%
+  }
+
+  .players input.plnr {
+    width: 20px
+  }
+
+  .players {
+    padding: 10px 5px 10px 1px
+  }
+
+  .sp .revealWhenHovered,
+  .revealWhenHovered {
+    width: 85%
+  }
+
+  .wrapEditable {}
+
+  #fouls1,
+  #fouls2 {
+    padding: 5px 2px
+  }
+
+  .addNewRound {
+    right: -12px
+  }
+
+  .sp .wrapPenaltyClock .wrapEditable input {
+    padding: 6px 0
+  }
+
+  .sp .possession {
+    padding-top: 22px;
+    margin: 0 !important
+  }
+
+  .sp .wrapLabel {
+    height: 9px
+  }
+
+  .sp .sl .possession {
+    padding-top: 28px
+  }
+
+  #fontSelector {
+    padding-top: 10px
+  }
+
+  .editable {
+    padding: 4px 0
+  }
+
+  .sp .timerSeparator {
+    margin-top: 13px
+  }
+
+  .sp .font4 .timerSeparator {
+    margin-top: 5px
+  }
+
+  .timeOutDot {
+    width: 24px;
+    height: 24px
+  }
+
+  #timeOut1,
+  #timeOut2 {
+    padding-top: 30px
+  }
+
+  #fouls1,
+  #fouls2 {
+    width: 120px
+  }
+
+  #period {
+    max-width: 69px
+  }
+
+  .possession {
+    padding-top: 23px
+  }
+
+  .timerSeparator {
+    margin-top: 30px
+  }
+
+  .sp .font3 .timerSeparator {
+    margin-top: 10px
+  }
+
+  .sp #wrapTime.timerAuto .timer,
+  .sp #wrapTime.timerMS .timer {
+    max-width: 120px;
+    padding: 3px 0
+  }
+
+  .wrapEditable,
+  #wrapTime,
+  .wrapPenaltyClock {
+    border-radius: 5px
+  }
+
+  .players .wrapPscore {
+    display: inline-block;
+    width: 25px;
+    height: 21px
+  }
+
+  .sp #scoreBoard,
+  #scoreBoard {
+    padding-top: 60px
+  }
+
+  .sp .penaltyNR {
+    display: none
+  }
+
+  input.teamName {
+    padding: 0 0 3px
+  }
+
+  .alwaysEditable {
+    width: 80px
+  }
+
+  a#logo {
+    top: 10px;
+    left: 10px;
+    line-height: 15px;
+    font-size: 19px
+  }
+
+  .players input {
+    padding: 1px 3px;
+    max-width: 65px
+  }
+
+  .alwaysEditable {
+    width: 80px;
+    max-width: 60%;
+    border-radius: 5px
+  }
+
+  .wrapShotClock .wrapEditable input {
+    width: 130px
+  }
+
+  #shotClock.size2 {
+    width: 165px
+  }
+
+  #shotClock.size3 {
+    font-size: 3.5em;
+    width: 235px
+  }
+
+  .revealWhenHovered>div a,
+  .sp .revealWhenHovered>div a {
+    font-size: 12px;
+    line-height: 13px;
+    min-width: 16px
+  }
+
+  .revealWhenHovered {
+    bottom: -22px
+  }
+
+  .wrapPenaltyClock .wrapEditable input {
+    width: 30px;
+    padding: 5px 1px
+  }
+
+  #middleSection>div>div {
+    margin: 0 2px
+  }
+
+  #wrapTime.timerAuto .timer,
+  #wrapTime.timerMS .timer {
+    max-width: 300px
+  }
+
+  #wrapTime.timerAll .timer {
+    max-width: 160px
+  }
+
+  .sp #middleSection>div {
+    margin: 0
+  }
+
+  .penaltyNR {
+    width: 30px;
+    font-size: 1.5em
+  }
+
+  .wrapLabel {
+    height: 20px
+  }
+}
+
+@media screen and (max-width:700px),
+screen and (max-height:800px) {
+  #scoreBoard {
+    font-size: 7px
+  }
+
+  .sp .centerPanel {
+    font-size: 1em
+  }
+
+  #showHidePlayerBoards.sp .players {
+    display: block !important;
+    max-width: 240px;
+    margin: auto
+  }
+
+  .sp .centerPanel {
+    max-width: 100%
+  }
+
+  #timeOut1,
+  #timeOut2 {
+    padding-top: 17px
+  }
+
+  .timeOutDot {
+    width: 14px;
+    height: 14px
+  }
+
+  #showHidePlayerBoards.sp .players {
+    font-size: 2em
+  }
+
+  .players input {
+    max-width: 80px
+  }
+
+  .playerScore {
+    width: 33px
+  }
+
+  #fouls1,
+  #fouls2 {
+    width: 50px
+  }
+
+  .possession {
+    padding-top: 16px
+  }
+
+  #period {
+    max-width: 38px
+  }
+
+  .wrapLabel {
+    height: 8px
+  }
+
+  .sl .possession {
+    padding-top: 20px
+  }
+
+  .sl #timeOut1,
+  .sl #timeOut2 {
+    padding-top: 9px
+  }
+
+  .wrapPenaltyClock .wrapEditable input {
+    width: 12px;
+    padding: 2px 1px
+  }
+
+  .playerPenalty {
+    margin: 4px 0
+  }
+
+  .penaltyNR {
+    width: 14px;
+    font-size: 1.5em
+  }
+
+  .timerSeparator {
+    margin-top: 16px
+  }
+
+  #wrapTime.timerAll .timer {
+    max-width: 80px
+  }
+
+  .font4 #wrapTime.timerAll .timer {
+    max-width: 60px
+  }
+
+  .font5 .timerSeparator,
+  .font4 .timerSeparator,
+  .font3 .timerSeparator,
+  .font2 .timerSeparator {
+    margin-top: 7px
+  }
+
+  #wrapScores div.team {
+    margin-bottom: 5px
+  }
+
+  .teams4 .team {
+    width: 50%
+  }
+}
+
+@media print {
+  body {
+    background: #FFF !important;
+    color: #000 !important
+  }
+
+  #scoreBoard {
+    font-size: 12px
+  }
+
+  input,
+  #wrapTime {
+    background: #FFF !important;
+    color: #000 !important
+  }
+
+  #panelCorner,
+  #toggleMenu {
+    display: none !important
+  }
+
+  #footnote {
+    display: block;
+    padding: 10px;
+    font-weight: bold;
+    border-top: 2px solid #999;
+    text-align: right
+  }
+}
