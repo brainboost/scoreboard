@@ -4,45 +4,49 @@
 )]
 
 use tauri::Manager;
-use tauri::Window;
 
-#[derive(Clone, serde::Serialize)]
-struct Payload {
-    message: String,
-}
-
-#[derive(Clone, serde::Serialize, serde::Deserialize)]
+#[derive(Clone, Debug, serde::Serialize, serde::Deserialize)]
 pub struct ScoreInfo {
-  pub clock: bool,
-  pub host_goals: i32,
-  pub visitor_goals: i32,
+    h_goals: i32,
+    v_goals: i32,
 }
 
 #[tauri::command]
-fn settings(name: &str) -> String {
-    println!("Settings saved {}", name);
-    format!("{name}")
+fn settings(app_handle: tauri::AppHandle, data: &str) {
+    println!("Settings saved {}", data);
+    app_handle.emit_all("settings", data).unwrap();
 }
 
 #[tauri::command]
-fn update(window: Window, data: ScoreInfo) -> String {
-    println!("Scoreboard update {}", data.clock);
-    window
-        .emit_all(
-            "update",
-            ScoreInfo {
-                clock: data.clock,
-                host_goals: data.host_goals,
-                visitor_goals: data.visitor_goals,
-            },
-        )
-        .unwrap();
-    format!("test")
+fn toggle_clock(app_handle: tauri::AppHandle) {
+    println!("Toggle clock");
+    app_handle.emit_all("toggle_clock", {}).unwrap();
+}
+
+#[tauri::command]
+fn update_clock(app_handle: tauri::AppHandle, data: &str) {
+    println!("Clock update {:?}", data);
+    app_handle.emit_all("update_clock", data).unwrap();
+}
+
+#[tauri::command]
+fn update_score(app_handle: tauri::AppHandle, data: ScoreInfo) {
+    println!(
+        "Score update {} - {}",
+        data.h_goals,
+        data.v_goals
+    );
+    app_handle.emit_all("update_score", data).unwrap();
 }
 
 fn main() {
     tauri::Builder::default()
-        .invoke_handler(tauri::generate_handler![settings, update])
+        .invoke_handler(tauri::generate_handler![
+            settings,
+            toggle_clock,
+            update_clock,
+            update_score
+        ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

@@ -1,3 +1,4 @@
+// board page
 function initVariables() {
     (parameterstring = $("#variables").text()).length < 2 && (parameterstring = window.location.href);
     var e = getUrlParam("stt", "101000550113011");

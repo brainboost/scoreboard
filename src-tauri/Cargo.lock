@@ -2217,7 +2217,7 @@ checksum = "d29ab0c6d3fc0ee92fe66e2d99f700eab17a8d57d1c1d3b748380fb20baa78cd"
 
 [[package]]
 name = "scoreboard"
-version = "0.0.0"
+version = "1.0.0"
 dependencies = [
  "serde",
  "serde_json",
@@ -2694,6 +2694,7 @@ dependencies = [
  "uuid 1.1.2",
  "webkit2gtk",
  "webview2-com",
+ "win7-notifications",
  "windows 0.39.0",
 ]
 
@@ -3295,6 +3296,16 @@ dependencies = [
  "windows 0.39.0",
  "windows-bindgen",
  "windows-metadata",
+]
+
+[[package]]
+name = "win7-notifications"
+version = "0.3.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "210952d7163b9ed83a6fd9754ab2a101d14480f8491b5f1d6292771d88dbee70"
+dependencies = [
+ "once_cell",
+ "windows-sys",
 ]
 
 [[package]]
