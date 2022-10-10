@@ -215,7 +215,6 @@ function kiirPenaltyClockTime(e, t) {
     s < 10 && (s = "0" + s), $("#wrapPenaltyClock" + e).hasClass("off") ? ($("#penalty" + e + "Min").val("0"), $("#penalty" + e + "Sec").val("00"), $("#penalty" + e).val("")) : ($("#penalty" + e + "Min").val(x), $("#penalty" + e + "Sec").val(s)), (x < 0 || s < 0) && ($("#penalty" + e + "Min").val("0"), $("#penalty" + e + "Sec").val("00"), $("#wrapPenaltyClock" + e).addClass("off"));
 }
 function setClockTime(e) {
-    //-1 == String(document.domain).indexOf("oreco") && (startTime = 0);
     var t = Math.floor(e / 6e4), x = Math.floor(e % 6e4 / 1e3), s = Math.floor(e % 1e3 / 10);
     s < 10 && (s = "0" + s), x < 10 && (x = "0" + x), $("#minutes").val(t), $("#seconds").val(x), $("#hundredth").val(s), showHideMiliseconds(), timerNow = e, t > 99 ? ($("#minutes").attr("maxlength", 3), $("#minutes").attr("size", 3), $("#minutes").addClass("smallerMinutesFont")) : ($("#minutes").attr("maxlength", 2), $("#minutes").attr("size", 2), $("#minutes").removeClass("smallerMinutesFont"));
 }
