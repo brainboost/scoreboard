@@ -11,6 +11,9 @@
     "version": "1.0.0"
   },
   "tauri": {
+    "systemTray":{
+      "iconPath": "icons/icon.png"
+    },
     "allowlist": {
       "all": true
     },

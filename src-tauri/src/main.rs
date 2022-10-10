@@ -3,12 +3,14 @@
     windows_subsystem = "windows"
 )]
 
-use tauri::Manager;
+use tauri::{
+    CustomMenuItem, Manager, SystemTray, SystemTrayEvent, SystemTrayMenu
+};
 
 #[derive(Clone, Debug, serde::Serialize, serde::Deserialize)]
 pub struct ScoreInfo {
-    h_goals: i32,
-    v_goals: i32,
+    h_goals: i16,
+    v_goals: i16,
 }
 
 #[tauri::command]
@@ -31,22 +33,41 @@ fn update_clock(app_handle: tauri::AppHandle, data: &str) {
 
 #[tauri::command]
 fn update_score(app_handle: tauri::AppHandle, data: ScoreInfo) {
-    println!(
-        "Score update {} - {}",
-        data.h_goals,
-        data.v_goals
-    );
+    println!("Score update {} - {}", data.h_goals, data.v_goals);
     app_handle.emit_all("update_score", data).unwrap();
 }
 
+#[tauri::command]
+fn update_period(app_handle: tauri::AppHandle, data: String) {
+    println!("Period {}", data);
+    app_handle.emit_all("update_period", data).unwrap();
+}
+
 fn main() {
+    let quit = CustomMenuItem::new("quit".to_string(), "Quit");
+    let tray_menu = SystemTrayMenu::new()
+        .add_item(quit);
+    let system_tray = SystemTray::new().with_menu(tray_menu);
     tauri::Builder::default()
+        .system_tray(system_tray)
+        .on_system_tray_event(|_app, event| match event {
+            SystemTrayEvent::MenuItemClick { id, .. } => {
+                match id.as_str() {
+                    "quit" => {
+                        std::process::exit(0);
+                    }
+                    _ => {}
+                }
+            }
+            _ => {}
+        })
         .invoke_handler(tauri::generate_handler![
             settings,
             toggle_clock,
             update_clock,
-            update_score
+            update_score,
+            update_period
         ])
         .run(tauri::generate_context!())
-        .expect("error while running tauri application");
+        .expect("error while building tauri application");
 }

@@ -14,4 +14,7 @@ function addListeners() {
     input1.value = event.payload.h_goals;
     input2.value = event.payload.v_goals;
   });
+  listen("update_period", (event) => {
+    document.getElementById("period").value = event.payload;
+  })
 }

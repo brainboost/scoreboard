@@ -9,7 +9,6 @@
   <meta name="keywords" content="scoreboard,score,counter" />
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script type="text/javascript" src="script.js"></script>
-  <script type="text/javascript" src="commands.js"></script>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
@@ -162,14 +161,12 @@
             <div> <strong>Reset</strong> <em data-button="resetScore">Score</em> <em data-button="resetTimer">Timer</em>
               <em data-button="resetPeriod">Period</em> <em data-button="resetPlayers">Players</em>
             </div>
-            <div> <strong>Mode</strong> <span data-cat="mode" data-s="1">ScoreBoard</span> <span data-cat="mode"
-                data-s="2">ScoreSheet</span> <span data-cat="mode" data-s="3">LapTimer</span> </div>
             <div> <strong>Timer</strong> <span data-cat="timerWiew" data-s="timerMS" data-order="1"
                 title="Minutes and seconds">M &amp; s</span> <span data-cat="timerWiew" data-s="timerAll"
                 data-order="2">All</span> <span data-cat="timerWiew" data-s="timerAuto" data-order="3">Auto</span>
               &nbsp;&nbsp;&nbsp;&nbsp; </div>
-            <div> <strong>Overtime</strong><i data-button="#wrapOvertime">OT</i> 
-              <strong>Font</strong> <span data-cat="font" data-s="1" id="fontFamily1">18</span> <span
+            <div><strong>Overtime</strong><i data-button="#wrapOvertime">OT</i></div>
+            <div><strong>Font</strong> <span data-cat="font" data-s="1" id="fontFamily1">18</span> <span
                 data-cat="font" data-s="2" id="fontFamily2">18</span> <span data-cat="font" data-s="3"
                 id="fontFamily3">18</span> <span data-cat="font" data-s="4" id="fontFamily4">18</span> <span
                 data-cat="font" data-s="5" id="fontFamily5">18</span> </div>
@@ -203,13 +200,19 @@
                 type="range" id="pushDown" min="-350" max="350" step="1" value="0" title="Push down">
             </div>
             <div style="width:100%;text-align: center;"> <strong>Show</strong> 
-              <i data-button=".wrapBoardTitle">Title</i> <i data-button=".wrapTeamName">Team</i>
-              <i data-button=".scoreWrapper">Score</i> <i data-button=".wrapLabel" id="labelToggleButton">Labels</i> 
-              <i data-button="#wrapTime">Timer</i> <i data-button="#showShotClock">Shot</i> 
-              <i data-button=".players" id="playersToggleButton">Players</i> <i data-button=".possession">Possession</i>
-              <i data-button=".wrapFouls">Fouls</i> <i data-button=".showHockeyPenalty">Penalties</i> 
-              <i data-button=".showTimeOut">TimeOut</i> <i data-button="#showOrHidePeriod">Period</i> 
-              <i data-button=".ranking">Ranking</i>
+              <i data-button=".wrapBoardTitle">Title</i> 
+              <i data-button=".wrapTeamName">Team</i>
+              <i data-button=".scoreWrapper">Score</i> 
+              <i data-button=".wrapLabel" id="labelToggleButton">Labels</i> 
+              <i data-button="#wrapTime">Timer</i> 
+              <i data-button="#showShotClock" style="display:none">Shot</i> 
+              <i data-button=".players" id="playersToggleButton" style="display:none">Players</i> 
+              <i data-button=".possession" style="display:none">Possession</i>
+              <i data-button=".wrapFouls" style="display:none">Fouls</i> 
+              <i data-button=".showHockeyPenalty" style="display:none">Penalties</i> 
+              <i data-button=".showTimeOut" style="display:none">TimeOut</i> 
+              <i data-button="#showOrHidePeriod">Period</i> 
+              <i data-button=".ranking" style="display:none">Ranking</i>
             </div>
             <div id="saveSettings" title="Save settings">
               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
@@ -258,6 +261,6 @@
   </div>
   <div id="customeStyles">
   </div>
+<script type="text/javascript" src="commands.js" async></script>
 </body>
-
 </html>

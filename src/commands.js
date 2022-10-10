@@ -1,28 +1,18 @@
 const { invoke } = window.__TAURI__.tauri;
 function addEvents() {
-  const settingsButton = document.querySelector("#saveSettings");
-  const timerArea = document.querySelector("#wrapTime");
-  
-  settingsButton.addEventListener("click", async () => {
-    var settingsString = settingsToUrl();
-    await invoke("settings", { data: settingsString });
-  });
-  timerArea.addEventListener("click", async () => {
-    await invoke("toggle_clock", { });
-  });
-  const input1 = document.querySelector("input[id='score1']");
-  const input2 = document.querySelector("input[id='score2']");
-  
-  input1.addEventListener("change", async () => {
-    await invoke("update_score", { data: { h_goals: parseInt(input1.value), v_goals: parseInt(input2.value) } });
-  });
-  input2.addEventListener("change", async () => {
-    await invoke("update_score", { data: { h_goals: parseInt(input1.value), v_goals: parseInt(input2.value) } });
-  });
- document.querySelector("#wrapscore1").addEventListener("click", async () => {
-    await invoke("update_score", { data: { h_goals: parseInt(input1.value), v_goals: parseInt(input2.value) } });
-  });
-  document.querySelector("#wrapscore2").addEventListener("click", async () => {
-    await invoke("update_score", { data: { h_goals: parseInt(input1.value), v_goals: parseInt(input2.value) } });
-  });
+  const settingsButton = document.getElementById("saveSettings");
+  const timerArea = document.getElementById("wrapTime");
+  settingsButton.onclick = () => invoke("settings", { data: settingsToUrl() });
+  timerArea.onclick = () => invoke("toggle_clock", { });
+
+  const score_h = document.getElementById("score1");
+  const score_v = document.getElementById("score2");
+  document.getElementById("wrapscore1").onclick = () => invoke("update_score", { data: { h_goals: parseInt(score_h.value), v_goals: parseInt(score_v.value) } });
+  document.getElementById("wrapscore2").onclick = () => invoke("update_score", { data: { h_goals: parseInt(score_h.value), v_goals: parseInt(score_v.value) } });
+  score_h.onchange = () => invoke("update_score", { data: { h_goals: parseInt(score_h.value), v_goals: parseInt(score_v.value) } });
+  score_v.onchange = () => invoke("update_score", { data: { h_goals: parseInt(score_h.value), v_goals: parseInt(score_v.value) } });
+
+  const period = document.getElementById("period");
+  document.getElementById("wrapPeriodDiv").onclick = () => invoke("update_period", { data: period.value });
+  period.onchange = () => invoke("update_period", { data: period.value });
 }

@@ -62,7 +62,7 @@ function getUrlParam(e, t) {
 function settingsToUrl() {
     var e = "";
     $("#scoreBoardTitle").val() != "Tournament" && (e += "&title=" + encodeURI($("#scoreBoardTitle").val()));
-    for (x = 1; x <= 10; x++) seg = "#score" + x, 0 != Number($(seg).val()) && (e += "&t" + x + "=" + $(seg).val()), 3 == mode && (e += "&ms" + x + "=" + $(seg).attr("data-ms"));
+    for (x = 1; x <= 2; x++) seg = "#score" + x, 0 != Number($(seg).val()) && (e += "&t" + x + "=" + $(seg).val()), 3 == mode && (e += "&ms" + x + "=" + $(seg).attr("data-ms"));
     if (2 == mode) {
         j = Number($("#wrapScores").attr("class").slice(-1));
         var t = "r";
@@ -71,12 +71,20 @@ function settingsToUrl() {
         }), e += t = t.slice(0, -1);
     }
     $("#teamName1").val() != "Home" && (e += "&n1=" + $("#teamName1").val()), $("#teamName2").val() != "Visitor" && (e += "&n2=" + $("#teamName2").val());
-    for (var x = 3; x <= 10; x++) seg = "#teamName" + x, $(seg).val() != "Team" + x && (e += "&n" + x + "=" + $(seg).val());
+    //for (var x = 3; x <= 10; x++) seg = "#teamName" + x, $(seg).val() != "Team" + x && (e += "&n" + x + "=" + $(seg).val());
     return 1 == countDown ? 10 != Number($("#minutes").val()) && (e += "&mm=" + Number($("#minutes").val())) : 0 != Number($("#minutes").val()) && (e += "&mm=" + Number($("#minutes").val())), 0 != Number($("#seconds").val()) && (e += "&ss=" + Number($("#seconds").val())), 0 != Number($("#hundredth").val()) && (e += "&hh=" + Number($("#hundredth").val())), seg = "1", $("#settings i").each(function () {
         j = $(this).attr("data-button"), $(j).css("display") == "none" ? seg += "0" : seg += "1";
     }), 19767 != (seg = parseInt(seg, 2)) && (e += "&show=" + seg), seg = "", $("ol.centerPanel > li").each(function () {
         seg += $(this).attr("data-li");
-    }), seg != "12345" && (e += "&panelord=" + seg), seg = "&stt=", seg += mode, seg += clock, seg += countDown, seg += timeOut1, seg += timeOut2, seg += playSounds, seg += playerFouls, seg += foulsPerQuater, seg += shotClockColorDifferent, seg += shotAutoStart, seg += $(".fontCat.select").attr("data-s"), seg += $(".timerWiewCat.select").attr("data-order"), $("#wrapOvertime").css("display") == "none" ? seg += 0 : seg += 1, seg += $(".shotClockSizeCat.select").attr("data-s"), -1 == (j = Number($("#wrapScores").attr("class").slice(-1)) - 1) && (j = 9), (seg += j) != "&stt=101000550113011" && (e += seg), 10 != $("#periodDuration").val() && (e += "&pd=" + $("#periodDuration").val()), 24 != $("#shotClockDuration").val() && (e += "&shot=" + $("#shotClockDuration").val()), $("#shotClock").val() != shot && $("#showShotClock").css("display") != "none" && (e += "&stc=" + $("#shotClock").val()), $("#customCSS").val().length > 3 && (e += "&stl=" + encodeURI($("#customCSS").val())), $("#bgColor").val() == "#69716B" && $("#textColor").val() == "#FFFFFF" && $("#digitColor").val() == "#F70000" && $("#digitBg").val() == "#000000" || (seg = $("#bgColor").val(), seg = seg.substring(1, seg.length), e += "&colors=" + seg + "-", seg = $("#textColor").val(), e += (seg = seg.substring(1, seg.length)) + "-", seg = $("#digitColor").val(), e += (seg = seg.substring(1, seg.length)) + "-", seg = $("#digitBg").val(), e += seg = seg.substring(1, seg.length)), 0 == Number($("#penaltyH1Min").val()) && 0 == Number($("#penaltyH1Sec").val()) || (e += "&ph1nr=" + $("#penaltyH1").val() + "&ph1m=" + $("#penaltyH1Min").val() + "&ph1s=" + $("#penaltyH1Sec").val()), 0 == Number($("#penaltyH2Min").val()) && 0 == Number($("#penaltyH2Sec").val()) || (e += "&ph2nr=" + $("#penaltyH2").val() + "&ph2m=" + $("#penaltyH2Min").val() + "&ph2s=" + $("#penaltyH2Sec").val()), 0 == Number($("#penaltyV1Min").val()) && 0 == Number($("#penaltyV1Sec").val()) || (e += "&pv1nr=" + $("#penaltyV1").val() + "&pv1m=" + $("#penaltyV1Min").val() + "&pv1s=" + $("#penaltyV1Sec").val()), 0 == Number($("#penaltyV2Min").val()) && 0 == Number($("#penaltyV2Sec").val()) || (e += "&pv2nr=" + $("#penaltyV2").val() + "&pv2m=" + $("#penaltyV2Min").val() + "&pv2s=" + $("#penaltyV2Sec").val()), $("#showHidePlayerBoards").hasClass("sp") && (x = 0, hPlayers = [], seg = "&hplayers=", $("#playersHome .phname").each(function () {
+    }), seg != "12345" && (e += "&panelord=" + seg), seg = "&stt=", 
+        seg += mode, seg += clock, seg += countDown, seg += timeOut1, seg += timeOut2, seg += playSounds, seg += playerFouls, seg += foulsPerQuater, seg += shotClockColorDifferent, 
+        seg += shotAutoStart, seg += $(".fontCat.select").attr("data-s"), seg += $(".timerWiewCat.select").attr("data-order"), 
+        $("#wrapOvertime").css("display") == "none" ? seg += 0 : seg += 1, seg += 3, 
+        -1 == (j = Number($("#wrapScores").attr("class").slice(-1)) - 1) && (j = 9), (seg += j) != "&stt=101000550113011" && (e += seg), 
+        $("#shotClock").val() != shot && $("#showShotClock").css("display") != "none" && (e += "&stc=" + $("#shotClock").val()), 
+        $("#customCSS").val().length > 3 && (e += "&stl=" + encodeURI($("#customCSS").val())), 
+        $("#bgColor").val() == "#69716B" && $("#textColor").val() == "#FFFFFF" && $("#digitColor").val() == "#F70000" && $("#digitBg").val() == "#000000" || (seg = $("#bgColor").val(), seg = seg.substring(1, seg.length), e += "&colors=" + seg + "-", seg = $("#textColor").val(), e += (seg = seg.substring(1, seg.length)) + "-", seg = $("#digitColor").val(), e += (seg = seg.substring(1, seg.length)) + "-", seg = $("#digitBg").val(), e += seg = seg.substring(1, seg.length)), 0 == Number($("#penaltyH1Min").val()) && 0 == Number($("#penaltyH1Sec").val()) || (e += "&ph1nr=" + $("#penaltyH1").val() + "&ph1m=" + $("#penaltyH1Min").val() + "&ph1s=" + $("#penaltyH1Sec").val()), 0 == Number($("#penaltyH2Min").val()) && 0 == Number($("#penaltyH2Sec").val()) || (e += "&ph2nr=" + $("#penaltyH2").val() + "&ph2m=" + $("#penaltyH2Min").val() + "&ph2s=" + $("#penaltyH2Sec").val()), 0 == Number($("#penaltyV1Min").val()) && 0 == Number($("#penaltyV1Sec").val()) || (e += "&pv1nr=" + $("#penaltyV1").val() + "&pv1m=" + $("#penaltyV1Min").val() + "&pv1s=" + $("#penaltyV1Sec").val()), 0 == Number($("#penaltyV2Min").val()) && 0 == Number($("#penaltyV2Sec").val()) || (e += "&pv2nr=" + $("#penaltyV2").val() + "&pv2m=" + $("#penaltyV2Min").val() + "&pv2s=" + $("#penaltyV2Sec").val()), $("#showHidePlayerBoards").hasClass("sp") && (x = 0, hPlayers = [], seg = "&hplayers=", 
+        $("#playersHome .phname").each(function () {
         seg += encodeURI($(this).val()) + "-";
     }), (seg = seg.substring(0, seg.length - 1)) != "&hplayers=Name-----------" && (e += seg), x = 0, vPlayers = [], seg = "&vplayers=", $("#playersVisitor .pvname").each(function () {
         seg += encodeURI($(this).val()) + "-";
@@ -94,7 +102,7 @@ function settingsToUrl() {
         seg += $(this).val() + "-";
     }), (seg = seg.substring(0, seg.length - 1)) != "&vpscore=0-0-0-0-0-0-0-0-0-0-0-0" && (e += seg)), $(".wrapLabel").css("display") != "none" && (seg = "&lbl=", $("input.label").each(function () {
         seg += encodeURI($(this).val()) + "-";
-    }), (seg = seg.substring(0, seg.length - 1)) != "FOULS-PENALTY-TIME%20OUT-PERIOD-PENALTY-TIME%20OUT-FOULS" && (e += seg)), $("#possession1").hasClass("active") && (e += "&alt=1"), $("#period").val() != "1" && (e += "&peri=" + $("#period").val()), $("#fouls1").val() != "0" && (e += "&fls1=" + $("#fouls1").val()), $("#fouls2").val() != "0" && (e += "&fls2=" + $("#fouls2").val()), $("#backgroundImg").val().length > 5 && (e += "&bgimg=" + encodeURI($("#backgroundImg").val())), $("#team1Img").val().length > 5 && (e += "&ti1mg=" + encodeURI($("#team1Img").val())), $("#team2Img").val().length > 5 && (e += "&ti2mg=" + encodeURI($("#team2Img").val())), 0 != $("#pushDown").val() && (e += "&pushdown=" + $("#pushDown").val()), e = e.replaceAt(0, "?");
+    }), (seg = seg.substring(0, seg.length - 1)) != "FOULS-PENALTY-TIME%20OUT-PERIOD-PENALTY-TIME%20OUT-FOULS" && (e += seg)), $("#possession1").hasClass("active") && (e += "&alt=1"), $("#period").val() != "1" && (e += "&peri=" + $("#period").val()), $("#fouls1").val() != "0" && (e += "&fls1=" + $("#fouls1").val()), $("#fouls2").val() != "0" && (e += "&fls2=" + $("#fouls2").val()), $("#backgroundImg").val().length > 5 && (e += "&bgimg=" + encodeURI($("#backgroundImg").val())), $("#team1Img").val().length > 5 && (e += "&ti1mg=" + encodeURI($("#team1Img").val())), $("#team2Img").val().length > 5 && (e += "&ti2mg=" + encodeURI($("#team2Img").val())), 0 != $("#pushDown").val() && (e += "&pushdown=" + $("#pushDown").val()), e = "?sport=football" + e.replaceAt(0, "&");
 }
 
 function updtateWhatsActiveWhatNot() {
@@ -369,7 +377,7 @@ var mode = 1, timerNow = -1, clock = 0, min, sec, ms = 0, countDown = 1, periodD
 $(document).ready(function () {
     $(".jscolor").colorPicker(),
     resetShotClock(shot);
-    for (var e = 1; e <= 10; e++) {
+    for (var e = 1; e <= 2; e++) {
         var t = "Team" + e;
         1 == e && (t = "Home"), 2 == e && (t = "Visitor"), $("#wrapScores").append('<div class="team" id="team' + e + '"><div id="teamImage' + e + '" class="teamImage"></div><div class="wrapTeamName"><input id="teamName' + e + '" class="teamName" type="text" maxlength="20"  value="' + t + '" /></div><div class="roundsAndAddIcon"><div class="roundWrapper" data-id="' + e + '" id="wrapRounds' + e + '"></div><div class="addNewRound" id="addNewRound' + e + '">+</div></div><div class="scoreWrapper"><div class="numberLengthAdjustWidth"><div class="ranking"></div><div class="wrapScoreInput"><input data-ms="0" id="score' + e + '" class="score digital editable" type="text" value="0" /><div class="wrapQuickScoreSett revealWhenHovered"><div class="quickScoreSett" data-id="' + e + '"><a class="resetScore0">=0</a><a class="scoreMinusOne">-1</a><a class="scorePlus2">+2</a><a class="scorePlus3">+3</a> </div></div></div></div></div></div>');
     }
@@ -472,7 +480,7 @@ $(document).ready(function () {
         1 == clock && clockTrigger(), setClockTime(6e4 * (j = Number($(this).text())));
     }), $("#wrapscore1, #wrapscore2, #wrapscore3, #wrapscore4, #wrapscore5, #wrapscore6, #wrapscore7, #wrapscore8, #wrapscore9, #wrapscore10, #wrapperiod, #wrapfouls1, #wrapfouls2").click(function (e) {
         var t = $(this).find("input"), x = Number(t.val());
-        1 != mode && $(this).attr("id") != "wrapfouls1" && $(this).attr("id") != "wrapfouls2" && $(this).attr("id") != "wrapperiod" || $("#showCaretOrNot").hasClass("showEditCaret") || (isNaN(x++) ? errorLog("Value must be a number!") : (t.val(x), t.attr("data-ms", x))), $(this).attr("id") == "wrapperiod" && (timeOut1 = 0, $("#timeOut1").removeClass(), timeOut2 = 0, $("#timeOut2").removeClass()), 10 == $("#period").val() && ($("#period").val(1), $("#wrapOvertime").toggle(222)), adjustScoreDigitSize();
+        1 != mode && $(this).attr("id") != "wrapfouls1" && $(this).attr("id") != "wrapfouls2" && $(this).attr("id") != "wrapperiod" || $("#showCaretOrNot").hasClass("showEditCaret") || (isNaN(x++) ? errorLog("Value must be a number!") : (t.val(x), t.attr("data-ms", x))), $(this).attr("id") == "wrapperiod" && (timeOut1 = 0, $("#timeOut1").removeClass(), timeOut2 = 0, $("#timeOut2").removeClass()), 3 == $("#period").val() && ($("#period").val(1), $("#wrapOvertime").toggle(222)), adjustScoreDigitSize();
     }), $(".wrapScoreInput").click(function (e) {
         $("#showCaretOrNot").hasClass("showEditCaret") || 2 == mode && $(this).parent().parent().prev().children().find("input").first().focus();
     }), $(".wrapScoreInput").mousedown(function (e) {
