@@ -3,8 +3,7 @@ name: Rust
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    paths: [ "package.json" ]
 
 env:
   CARGO_TERM_COLOR: always
@@ -27,6 +26,8 @@ jobs:
         uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
+      - name: install app dependencies and build it
+        run: yarn && yarn tauri build
       - uses: JonasKruckenberg/tauri-build@v1
         id: tauri_build
       - uses: actions/upload-artifact@v3
@@ -56,9 +57,9 @@ jobs:
             const { data } = await github.rest.repos.createRelease({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              tag_name: `app-v${process.env.PACKAGE_VERSION}`,
+              tag_name: `v${process.env.PACKAGE_VERSION}`,
               name: `Desktop App v${process.env.PACKAGE_VERSION}`,
-              body: 'Take a look at the assets to download and install this app.',
+              body: 'Take a look at the assets to download and install this app',
               draft: true,
               prerelease: false
             })
@@ -69,17 +70,16 @@ jobs:
     needs: [ create-release, build ]
     
     steps:
-      - name: publish release
-        id: publish-release
-        uses: actions/github-script@v6
-        env:
-          release_id: ${{ needs.create-release.outputs.release_id }}
+      - uses: actions/checkout@v2
+      - uses: actions/download-artifact@v3
+        id: download
         with:
-          script: |
-            github.rest.repos.updateRelease({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              release_id: process.env.release_id,
-              draft: false,
-              prerelease: false
-            })
+          name: artifacts
+          path: artifacts
+      - name: 'create release'
+        uses: softprops/action-gh-release@master
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+        with:
+          draft: false
+          files: ./artifacts/**/*

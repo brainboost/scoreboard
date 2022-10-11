@@ -4,7 +4,7 @@
 )]
 
 use tauri::{
-    CustomMenuItem, Manager, SystemTray, SystemTrayEvent, SystemTrayMenu
+    CustomMenuItem, Manager, SystemTray, SystemTrayEvent, SystemTrayMenu, SystemTrayMenuItem,
 };
 
 #[derive(Clone, Debug, serde::Serialize, serde::Deserialize)]
@@ -46,15 +46,26 @@ fn update_period(app_handle: tauri::AppHandle, data: String) {
 fn main() {
     let quit = CustomMenuItem::new("quit".to_string(), "Quit");
     let tray_menu = SystemTrayMenu::new()
-        .add_item(quit);
+        .add_item(quit)
+        .add_native_item(SystemTrayMenuItem::Separator)
+        .add_item(CustomMenuItem::new("show", "Show"));
     let system_tray = SystemTray::new().with_menu(tray_menu);
     tauri::Builder::default()
         .system_tray(system_tray)
-        .on_system_tray_event(|_app, event| match event {
+        .on_system_tray_event(|app, event| match event {
             SystemTrayEvent::MenuItemClick { id, .. } => {
                 match id.as_str() {
                     "quit" => {
                         std::process::exit(0);
+                    }
+                    "show" => {
+                        let window = app.get_window("main").unwrap();
+                        window.show().unwrap();
+                        // let set_window = tauri::WindowBuilder::new(
+                        //     app,
+                        //     "main"
+                        //     // tauri::WindowUrl::External("https://tauri.app/".parse().unwrap())
+                        //   ).build().expect("failed to build window");
                     }
                     _ => {}
                 }

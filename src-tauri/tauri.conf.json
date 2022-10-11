@@ -8,7 +8,7 @@
   },
   "package": {
     "productName": "scoreboard",
-    "version": "1.0.0"
+    "version": "0.0.2"
   },
   "tauri": {
     "systemTray":{
@@ -42,7 +42,7 @@
         "signingIdentity": null
       },
       "resources": [],
-      "shortDescription": "Stadium scoreboard",
+      "shortDescription": "Football scoreboard",
       "targets": "all",
       "windows": {
         "certificateThumbprint": null,
@@ -59,15 +59,16 @@
     "windows": [
       {
         "fullscreen": true,
-        "decorations": true,
         "label": "scoreboard",
         "title": "Board",
         "url": "/board/index.html"
       },
       {
         "fullscreen": false,
+        "focus": true,
+        "decorations": true,
         "resizable": true,
-        "title": "settings",
+        "title": "Settings",
         "height": 800,
         "width": 1200
       }
