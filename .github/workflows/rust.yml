@@ -66,20 +66,35 @@ jobs:
             return data.id
 
   publish-release:
-    runs-on: ubuntu-latest
     needs: [ create-release, build ]
-    
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/download-artifact@v3
-        id: download
-        with:
-          name: artifacts
-          path: artifacts
-      - name: 'create release'
-        uses: softprops/action-gh-release@master
-        env:
-          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
-        with:
-          draft: false
-          files: ./artifacts/**/*
+    - name: 🔃 Checkout dist branch
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - name: 🛎️ Create release
+      uses: ncipollo/release-action@v1
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        tag: v${process.env.PACKAGE_VERSION}
+        artifacts: "./artifacts/**/*"
+        draft: true
+
+    # runs-on: ubuntu-latest
+    # needs: [ create-release, build ]
+    
+    # steps:
+    #   - uses: actions/checkout@v2
+    #   - uses: actions/download-artifact@v3
+    #     id: download
+    #     with:
+    #       name: artifacts
+    #       path: artifacts
+    #   - name: 'create release'
+    #     uses: softprops/action-gh-release@master
+    #     env:
+    #       GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+    #     with:
+    #       draft: false
+    #       files: ./artifacts/**/*

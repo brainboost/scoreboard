@@ -5,6 +5,7 @@
 
 use tauri::{
     CustomMenuItem, Manager, SystemTray, SystemTrayEvent, SystemTrayMenu, SystemTrayMenuItem,
+    WindowEvent,
 };
 
 #[derive(Clone, Debug, serde::Serialize, serde::Deserialize)]
@@ -48,28 +49,21 @@ fn main() {
     let tray_menu = SystemTrayMenu::new()
         .add_item(quit)
         .add_native_item(SystemTrayMenuItem::Separator)
-        .add_item(CustomMenuItem::new("show", "Show"));
+        .add_item(CustomMenuItem::new("restart", "Restart"));
     let system_tray = SystemTray::new().with_menu(tray_menu);
     tauri::Builder::default()
         .system_tray(system_tray)
         .on_system_tray_event(|app, event| match event {
-            SystemTrayEvent::MenuItemClick { id, .. } => {
-                match id.as_str() {
-                    "quit" => {
-                        std::process::exit(0);
-                    }
-                    "show" => {
-                        let window = app.get_window("main").unwrap();
-                        window.show().unwrap();
-                        // let set_window = tauri::WindowBuilder::new(
-                        //     app,
-                        //     "main"
-                        //     // tauri::WindowUrl::External("https://tauri.app/".parse().unwrap())
-                        //   ).build().expect("failed to build window");
-                    }
-                    _ => {}
+            SystemTrayEvent::MenuItemClick { id, .. } => match id.as_str() {
+                "quit" => {
+                    std::process::exit(0);
                 }
-            }
+                "restart" => {
+                    tauri::api::process::kill_children();
+                    tauri::api::process::restart(&app.env());
+                }
+                _ => {}
+            },
             _ => {}
         })
         .invoke_handler(tauri::generate_handler![
@@ -79,6 +73,22 @@ fn main() {
             update_score,
             update_period
         ])
-        .run(tauri::generate_context!())
-        .expect("error while building tauri application");
+        .build(tauri::generate_context!())
+        .expect("error while building tauri application")
+        .run(|_app_handle, e| match e {
+            tauri::RunEvent::WindowEvent { label, event, .. } => {
+                if label.ne("main") {
+                    return;
+                }
+                match event {
+                    WindowEvent::CloseRequested { api, .. } => {
+                        tauri::async_runtime::block_on(async move {
+                            api.prevent_close();
+                        })
+                    }
+                    _ => {}
+                }
+            }
+            _ => {}
+        });
 }
