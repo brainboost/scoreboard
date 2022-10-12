@@ -1,21 +1,13 @@
-name: Rust
+name: Tauri-app
 
 on:
   push:
     branches: [ "main" ]
     paths: [ "package.json" ]
 
-env:
-  CARGO_TERM_COLOR: always
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
-
 jobs:
   build:
     runs-on: windows-latest
-
     steps:
       - uses: actions/checkout@v3
       - name: setup node
@@ -36,11 +28,10 @@ jobs:
           path: "${{ join(fromJSON(steps.tauri_build.outputs.artifacts), '\n') }}"
 
   create-release:
-    runs-on: ubuntu-latest
     needs: build
+    runs-on: ubuntu-latest
     outputs:
       release_id: ${{ steps.create-release.outputs.result }}
-
     steps:
       - uses: actions/checkout@v2
       - name: setup node
@@ -63,38 +54,24 @@ jobs:
               draft: true,
               prerelease: false
             })
-            return data.id
+            return data.tag_name
 
-  publish-release:
-    needs: [ create-release, build ]
+  publish:
     runs-on: ubuntu-latest
-    steps:
-    - name: 🔃 Checkout dist branch
-      uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
-    - name: 🛎️ Create release
-      uses: ncipollo/release-action@v1
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        tag: v${process.env.PACKAGE_VERSION}
-        artifacts: "./artifacts/**/*"
-        draft: true
-
-    # runs-on: ubuntu-latest
-    # needs: [ create-release, build ]
+    needs: [ build, create-release ]
     
-    # steps:
-    #   - uses: actions/checkout@v2
-    #   - uses: actions/download-artifact@v3
-    #     id: download
-    #     with:
-    #       name: artifacts
-    #       path: artifacts
-    #   - name: 'create release'
-    #     uses: softprops/action-gh-release@master
-    #     env:
-    #       GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
-    #     with:
-    #       draft: false
-    #       files: ./artifacts/**/*
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/download-artifact@v3
+        id: download
+        with:
+          name: artifacts
+          path: artifacts
+      - name: 'create release'
+        uses: softprops/action-gh-release@master
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+        with:
+          tag_name: ${{ needs.create-release.outputs.release_id }}
+          draft: false
+          files: ./artifacts/**/*
