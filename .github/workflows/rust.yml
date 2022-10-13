@@ -18,8 +18,8 @@ jobs:
         uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
-      - name: install app dependencies and build it
-        run: yarn && yarn tauri build
+      # - name: install app dependencies and build it
+      #   run: yarn && yarn tauri build
       - uses: JonasKruckenberg/tauri-build@v1
         id: tauri_build
       - uses: actions/upload-artifact@v3
@@ -46,16 +46,8 @@ jobs:
         with:
           script: |
             try {
-              await github.rest.repos.createRelease({
-                draft: false,
-                generate_release_notes: true,
-                name: process.env.PACKAGE_VERSION,
-                owner: context.repo.owner,
-                prerelease: false,
-                repo: context.repo.repo,
-                tag_name: process.env.PACKAGE_VERSION,
-              });
-              return process.env.PACKAGE_VERSION
+              console.log(process.env.PACKAGE_VERSION);
+              return process.env.PACKAGE_VERSION;
             } catch (error) {
               core.setFailed(error.message);
             }
@@ -75,6 +67,6 @@ jobs:
         env:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
         with:
-          tag_name: ${{ needs.create-release.outputs.release_id }}
+          tag_name: '${{ needs.create-release.outputs.release_id }}'
           draft: false
           files: ./artifacts/**/*
